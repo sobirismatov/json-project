@@ -106,8 +106,17 @@ def get_user_by_firstname(data: dict, first_name: str) -> dict:
     Returns:
         dict: user data
     '''
-    return 0
-
+    dic=json.loads(data)
+    dic=dic["users"]
+    m=[]
+    n=[]
+    for i in dic:
+        m.append(i["id"])
+        n.append(i["first_name"])
+    k=dic(zip(m,n))
+    return k
+f =open("data.jsosn")
+data=f.read()
 
 
 def get_user_by_lastname(data: dict, flast_name: str) -> dict:
@@ -120,8 +129,17 @@ def get_user_by_lastname(data: dict, flast_name: str) -> dict:
     Returns:
         dict: user data
     '''
-    return 0
-
+    dic=json.loads(data)
+    dic=dic["users"]
+    m=[]
+    n=[]
+    for i in  dic:
+        m.append(i["id"])
+        n.append(i["last_name"])
+    k=dict(zip(m,n))
+    return k
+f=open("data.json")
+data=f.read()
 
 
 def get_user_by_country(data: dict, fcountry: str) -> dict:
@@ -134,5 +152,15 @@ def get_user_by_country(data: dict, fcountry: str) -> dict:
     Returns:
         dict: user data
     '''
-    return 0
-
+    dic=json.loads(data)
+    dic=dic["user"]
+    m=[]
+    n=[]
+    for i in dic:
+        m.append(i["id"])
+        n.append(i["country"])
+    k=dict(zip(m,n))
+    return k
+f=open("data.json")
+data=f.read()
+print(get_user_by_country(data))
